@@ -27,18 +27,18 @@ Para gerar o relatório, é importante que um **Remote Print Server** esteja reg
 
 * Acesse: **WorkSpace Utilities > Remote Servers**
 * Crie um novo Remote Server com o endpoint:
-  `/api/apex/generatePdfFromApex`
+  `/api/apex/generateReportFromJasper`
 
 Durante os testes locais, recomendamos o uso do [ngrok](https://ngrok.com/) para expor a aplicação:
 
 ```bash
-https://<ngrok-url>/api/apex/generatePdfFromApex
+https://<ngrok-url>/api/apex/generateReportFromJasper
 ```
 
 Demo:
 
 ```bash
-https://apexprint.joaopessoa.pb.gov.br/api/apex/generatePdfFromApex
+https://apexprint.joaopessoa.pb.gov.br/api/apex/generateReportFromJasper
 ```
 
 > ℹ️ O ngrok gera URLs efêmeras. Sempre copie a nova URL após iniciar o ngrok.
