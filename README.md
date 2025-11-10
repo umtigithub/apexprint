@@ -70,18 +70,105 @@ você deseja criar.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE jasperReport PUBLIC "-//JasperReports//DTD Report Design//EN"
-"http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
-<jasperReport name="sample" pageWidth="595" pageHeight="842" columnWidth="555"
-              leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
-    <detail>
-        <band height="20">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports
+                                  http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+              name="RelatorioBeneficios"
+              pageWidth="595" pageHeight="842"
+              columnWidth="535" leftMargin="30" rightMargin="30"
+              topMargin="30" bottomMargin="30">
+
+    <!-- Definição da fonte -->
+    <style name="Base" isDefault="true" fontSize="10"/>
+    
+    <!-- Fields - correspondem aos campos do SQL -->
+    <field name="TNAME" class="java.lang.String"/>
+    <field name="TABTYPE" class="java.lang.String"/>
+    <field name="CLUSTERID" class="java.lang.String"/>
+    
+    <!-- Título do relatório -->
+    <title>
+        <band height="50">
             <staticText>
-                <reportElement x="0" y="0" width="200" height="20"/>
-                <text><![CDATA[Hello Jasper!]]></text>
+                <reportElement x="0" y="0" width="535" height="30"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font size="16" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Relatório de Benefícios]]></text>
             </staticText>
         </band>
+    </title>
+
+    <!-- Cabeçalho das colunas -->
+    <columnHeader>
+        <band height="20">
+            <staticText>
+                <reportElement x="0" y="0" width="100" height="20"/>
+                <textElement verticalAlignment="Middle">
+                    <font isBold="true"/>
+                </textElement>
+                <text><![CDATA[Nome da Tabela]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="100" y="0" width="300" height="20"/>
+                <textElement verticalAlignment="Middle">
+                    <font isBold="true"/>
+                </textElement>
+                <text><![CDATA[Tipo de Tabela]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="400" y="0" width="135" height="20"/>
+                <textElement verticalAlignment="Middle">
+                    <font isBold="true"/>
+                </textElement>
+                <text><![CDATA[Cluster ID]]></text>
+            </staticText>
+        </band>
+    </columnHeader>
+
+    <!-- Detalhes - dados do relatório -->
+    <detail>
+        <band height="20">
+            <textField isBlankWhenNull="true">
+                <reportElement x="0" y="0" width="100" height="20"/>
+                <textElement verticalAlignment="Middle"/>
+                <textFieldExpression><![CDATA[$F{TNAME}]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="true">
+                <reportElement x="100" y="0" width="300" height="20"/>
+                <textElement verticalAlignment="Middle"/>
+                <textFieldExpression><![CDATA[$F{TABTYPE}]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="true">
+                <reportElement x="400" y="0" width="135" height="20"/>
+                <textElement verticalAlignment="Middle"/>
+                <textFieldExpression><![CDATA[$F{CLUSTERID}]]></textFieldExpression>
+            </textField>
+        </band>
     </detail>
+
+    <!-- Rodapé da página -->
+    <pageFooter>
+        <band height="30">
+            <textField>
+                <reportElement x="0" y="10" width="280" height="20"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <textFieldExpression><![CDATA["Página " + $V{PAGE_NUMBER} + " de"]]></textFieldExpression>
+            </textField>
+            <textField evaluationTime="Report">
+                <reportElement x="280" y="10" width="75" height="20"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+            </textField>
+            <textField pattern="dd/MM/yyyy HH:mm:ss">
+                <reportElement x="435" y="10" width="100" height="20"/>
+                <textElement textAlignment="Right" verticalAlignment="Middle"/>
+                <textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+            </textField>
+        </band>
+    </pageFooter>
+
 </jasperReport>
 ```
 
