@@ -165,7 +165,6 @@ docker run -p 8080:8080 printserver
 ## TO-DO
 
 * [ ] Permitir exportação para outros formatos (XLSX, DOCX, etc.)
-* [ ] Suporte para múltiplas queries no Report Query do Apex
 * [ ] Autenticação opcional com token para o endpoint
 * [ ] Página de visualização prévia dos relatórios
 
