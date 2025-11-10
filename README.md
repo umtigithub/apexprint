@@ -35,6 +35,12 @@ Durante os testes locais, recomendamos o uso do [ngrok](https://ngrok.com/) para
 https://<ngrok-url>/api/apex/generatePdfFromApex
 ```
 
+Demo:
+
+```bash
+https://apexprint.joaopessoa.pb.gov.br/api/apex/generatePdfFromApex
+```
+
 > ℹ️ O ngrok gera URLs efêmeras. Sempre copie a nova URL após iniciar o ngrok.
 > Para URLs estáticas, veja a [documentação do ngrok](https://ngrok.com/).
 
