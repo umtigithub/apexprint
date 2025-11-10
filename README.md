@@ -88,8 +88,6 @@ A aplicação é feita com **Spring Boot** e expõe um endpoint para receber o `
 
 ### Serviços
 
-* **XmlToJasperDataSource**
-  Converte o XML em uma lista de mapas (`List<Map<String, Object>>`)
 
 * **GenerateReportFromJrxmlToPdf**
   Converte a string JRXML e a lista de dados em um relatório PDF com JasperReports.
