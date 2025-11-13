@@ -1,6 +1,10 @@
 
 # Custom Remote Print Server For Oracle Apex
 
+Jasper 6.21.5: [https://github.com/umtigithub/apexprint]
+Pentaho:
+
+
 API que recebe **Report Query** do Oracle Apex e retorna o relatório customizado e dinâmico.
 
 ## Desenvolvedores
