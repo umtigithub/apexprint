@@ -1,6 +1,10 @@
 
 # Custom Remote Print Server For Oracle Apex
 
+Jasper 6.21.5: [https://github.com/umtigithub/apexprint]
+Pentaho:
+
+
 API que recebe **Report Query** do Oracle Apex e retorna o relatório customizado e dinâmico.
 
 ## Desenvolvedores
@@ -15,7 +19,7 @@ API que recebe **Report Query** do Oracle Apex e retorna o relatório customizad
   * Email: [vinisoares15@gmail.com](mailto:vinisoares15@gmail.com)
   * LinkedIn: [https://www.linkedin.com/in/vinicius-sf](https://www.linkedin.com/in/vinicius-sf/)
  
-    * **João Pedro Figueiredo**
+* **João Pedro Figueiredo**
 
   * Email: [jpbusinesss@hotmail.com](mailto:jpbusinesss@hotmail.com)
   * LinkedIn: [https://www.linkedin.com/in/joaoPedroFigueiredo](linkedin.com/in/joãopedrosoaresfigueiredo)
@@ -32,18 +36,18 @@ Para gerar o relatório, é importante que um **Remote Print Server** esteja reg
 
 * Acesse: **WorkSpace Utilities > Remote Servers**
 * Crie um novo Remote Server com o endpoint:
-  `/api/apex/generateReportFromJasper`
+  `/report/generate`
 
 Durante os testes locais, recomendamos o uso do [ngrok](https://ngrok.com/) para expor a aplicação:
 
 ```bash
-https://<ngrok-url>/api/apex/generateReportFromJasper
+https://<ngrok-url>/report/generate
 ```
 
 Demo:
 
 ```bash
-https://apexprint.joaopessoa.pb.gov.br/api/apex/generateReportFromJasper
+https://apexprint.joaopessoa.pb.gov.br/report/generate
 ```
 
 > ℹ️ O ngrok gera URLs efêmeras. Sempre copie a nova URL após iniciar o ngrok.
@@ -197,8 +201,8 @@ A aplicação é feita com **Spring Boot** e expõe um endpoint para receber o `
 
 ### Controller
 
-* **Endpoint base**: `/api/jasper`
-* **Rota**: `/generatePdfFromJasper`
+* **Endpoint base**: `/report`
+* **Rota**: `/generate`
   Recebe uma requisição `multipart/form-data` com `xmlData` e `templateFile`
   Retorna um PDF como resposta.
 
@@ -230,7 +234,7 @@ ngrok http 8080
 3. Copiar URL `Forwarding` do ngrok e configurar no Apex:
 
 ```bash
-https://<ngrok-url>/api/apex/generatePdfFromApex
+https://<ngrok-url>/report/generate
 ```
 
 4. Testar:
