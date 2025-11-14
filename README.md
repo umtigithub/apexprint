@@ -19,7 +19,7 @@ API que recebe **Report Query** do Oracle Apex e retorna o relatório customizad
   * Email: [vinisoares15@gmail.com](mailto:vinisoares15@gmail.com)
   * LinkedIn: [https://www.linkedin.com/in/vinicius-sf](https://www.linkedin.com/in/vinicius-sf/)
  
-    * **João Pedro Figueiredo**
+* **João Pedro Figueiredo**
 
   * Email: [jpbusinesss@hotmail.com](mailto:jpbusinesss@hotmail.com)
   * LinkedIn: [https://www.linkedin.com/in/joaoPedroFigueiredo](linkedin.com/in/joãopedrosoaresfigueiredo)
