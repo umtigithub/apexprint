@@ -2,7 +2,7 @@
 # Custom Remote Print Server For Oracle Apex
 
 Jasper 6.21.5: [https://github.com/umtigithub/apexprint]
-Pentaho:
+Birt runtime 4.21.0: [https://github.com/umtigithub/apex-print-server-birt]
 
 
 API que recebe **Report Query** do Oracle Apex e retorna o relatório customizado e dinâmico.
